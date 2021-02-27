@@ -1,0 +1,49 @@
+﻿@model IEnumerable<MyBlog.Models.Blog>
+@{
+    ViewData["Title"] = "Ana Sayfa";
+}
+<header class="masthead" style="background-image: url('img/f16-2.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="site-heading">
+                    <h1>My Aviation Blog</h1>
+                    <span class="subheading"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            @foreach (var item in Model)
+            {
+                <div class="post-preview">
+                    <a asp-action="Post" asp-route-id="@item.Id">
+                        <h2 class="post-title">
+                            @item.Title
+                        </h2>
+                        <h3 class="post-subtitle">
+                            @item.Subtitle
+                        </h3>
+                    </a>
+                    <p class="post-meta">
+                        Posted by
+                        @item.Author.Name
+                        @item.Author.Surname
+                        @item.CreateTime 'da yayınlandı
+                    </p>
+                </div>
+                <hr>
+            }
+
+
+            <!-- Pager -->
+            <div class="clearfix">
+                <a class="btn btn-primary float-right" href="#">Diğer Yazılar &rarr;</a>
+            </div>
+        </div>
+    </div>
+</div>
