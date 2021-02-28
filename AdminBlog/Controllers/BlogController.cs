@@ -55,7 +55,7 @@ namespace AdminBlog.Controllers
             if (model != null)
             {
                 var file = Request.Form.Files.First();
-                string savePath = Path.Combine("C:", "Users", "samet", "Youtube", "MyBlog", "wwwroot", "images");
+                string savePath = Path.Combine("C:", "Kullanıcılar", "HABIBE-USER", "source", "repos", "MyBlog", "AdminBlog","wwwroot","images");
                 var fileName = $"{DateTime.Now:MMddHHmmss}.{file.FileName.Split(".").Last()}";
                 var fileUrl = Path.Combine(savePath, fileName);
                 using (var fileStream = new FileStream(fileUrl, FileMode.Create))

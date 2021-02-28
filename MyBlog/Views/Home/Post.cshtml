@@ -1,8 +1,7 @@
-﻿@model MyBlog.Models.Blog
-@{
-    ViewData["Title"] = "Ana Sayfa";
-}
-<header class="masthead" style="background-image: url('@Model.ImagePath')">
+﻿
+@model MyBlog.Models.Blog
+
+<header class="masthead" style="background-image: url('/img/ss1.png')">
     <div class="overlay"></div>
     <div class="container">
         <div class="row">
@@ -12,7 +11,7 @@
                     <h2 class="subheading">@Model.Subtitle</h2>
                     <span class="meta">
                         Posted by
-                        @Model.Author.Name  @Model.Author.Surname
+                        @Model.Author.Name @Model.Author.Surname
                         on @Model.CreateTime
                     </span>
                 </div>
@@ -26,8 +25,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-md-10 mx-auto">
+                    <img src="@Model.ImagePath "/>
+                    @*<img src="/img/ss1.png" width="670" height="300">*@
                     @Html.Raw(Model.Content)
                 </div>
+
             </div>
         </div>
     </article>

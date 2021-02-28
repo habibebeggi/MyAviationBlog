@@ -1,8 +1,8 @@
 ﻿@model IEnumerable<MyBlog.Models.Blog>
 @{
-    ViewData["Title"] = "Ana Sayfa";
+    ViewData["Title"] = "Home Page";
 }
-<header class="masthead" style="background-image: url('img/f16-2.jpg')">
+<header class="masthead" style="background-image: url('/img/f16-2.jpg')">
     <div class="overlay"></div>
     <div class="container">
         <div class="row">
@@ -31,8 +31,7 @@
                     </a>
                     <p class="post-meta">
                         Posted by
-                        @item.Author.Name
-                        @item.Author.Surname
+                        @item.Author.Name @item.Author.Surname
                         @item.CreateTime 'da yayınlandı
                     </p>
                 </div>
@@ -42,7 +41,7 @@
 
             <!-- Pager -->
             <div class="clearfix">
-                <a class="btn btn-primary float-right" href="#">Diğer Yazılar &rarr;</a>
+                <a class="btn btn-primary float-right" href="https://localhost:44345/">Diğer Gönderiler &rarr;</a>
             </div>
         </div>
     </div>
